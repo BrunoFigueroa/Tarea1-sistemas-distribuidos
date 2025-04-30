@@ -1,0 +1,9 @@
+{
+  "name": "scrapperapp",
+  "version": "1.0.0",
+  "main": "scrapper.js",
+  "dependencies": {
+    "puppeteer": "^22.5.0",
+    "mongodb": "^6.5.0"
+  }
+}

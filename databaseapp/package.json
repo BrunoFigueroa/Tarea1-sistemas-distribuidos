@@ -1,0 +1,8 @@
+{
+  "name": "databaseapp",
+  "version": "1.0.0",
+  "main": "mongoSetter.js",
+  "dependencies": {
+    "mongodb": "^6.5.0"
+  }
+}

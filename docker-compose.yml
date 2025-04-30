@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis
+    container_name: redis
+    command: ["redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-random"]
+    ports:
+      - "6379:6379"
+
+  inserter:
+    build:
+      context: ./databaseapp
+    container_name: inserter
+    depends_on:
+      - mongo
+    volumes:
+      - ./databaseapp/events.json:/data/events.json
+    command: ["node", "mongoSetter.js"]
+
+  scrapper:
+    build:
+      context: ./scrapperapp
+    container_name: scrapper
+    depends_on:
+      - mongo
+    command: ["node", "scrapper.js"]
+
+  cache:
+    build:
+      context: ./cacheapp
+    container_name: cache
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+      - mongo
+    command: ["node", "cache.js"]
+
+  generator:
+    build:
+      context: ./generatorapp
+    container_name: generator
+    depends_on:
+      - cache
+    command: ["node", "trafficGenerator.js"]
+
+volumes:
+  mongo_data:
