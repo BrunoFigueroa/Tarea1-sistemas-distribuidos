@@ -18,6 +18,8 @@ async function insertData() {
 
     const db = client.db(dbName);
     const collections = await db.listCollections({ name: counterCollectionName }).toArray();
+
+    // SI LAS COLECCIONES YA EXISTEN, ENTONCES ESTE PROGRAMA ES INNECESARIO Y SE TERMINA LA EJECUCION.
     if (collections.length > 0) {
       console.log(`Collection "${counterCollectionName}" already exists. Exiting...`);
       client.close();
