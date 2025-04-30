@@ -104,7 +104,7 @@ Traffic Generator (generator) tiene como objetivo el simular el envio de querys 
 - `Traffic Generator` pone el sistema bajo carga y mide el rendimiento.
 
 ## Como interactuar con este sistema?
-- Descargar el repositorio.
+- Descargar el repositorio, de la master branch.
 - Desde la terminal, entrar al directorio del proyecto.
 - ejecutar alguna variante de los siguientes comandos:
 
