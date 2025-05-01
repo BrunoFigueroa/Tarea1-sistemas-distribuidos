@@ -109,12 +109,16 @@ Traffic Generator (generator) tiene como objetivo el simular el envio de querys 
 - ejecutar alguna variante de los siguientes comandos:
 
 1. Si quieres ver el funcionamiento del scraper:
+~~~bash
 docker compose up --build -d
 docker compose logs -f scrapper
+~~~
 
-2. Si quieres ver el funcionamiento del traffic generator:
+3. Si quieres ver el funcionamiento del traffic generator:
+~~~bash
 docker compose up --build -d
 docker compose logs -f generator
+~~~
 
 Recuerda utilizar docker compose down para reiniciar entre deployments.
 Adicionamente, si quieres puedes reemplazar scrapper/generator por el nombre de cualquier container (se pueden ver arriba en el apartado docker-compose) para ver los logs de cada contenedor por separado, tambien puedes no dejar argumento, pero eso causaria que todos los contenedores muestren los logs al mismo tiempo en la misma terminal, lo que puede resultar caotico.
