@@ -1,0 +1,9 @@
+{
+  "name": "filterapp",
+  "version": "1.0.0",
+  "main": "filter.js",
+  "type": "module",
+  "dependencies": {
+    "mongodb": "^6.5.0"
+  }
+}

@@ -26,32 +26,45 @@ services:
       - ./databaseapp/events.json:/data/events.json
     command: ["node", "mongoSetter.js"]
 
-  scrapper:
+# TESTING THE FILTER, DONT NEED A SCRAPPER FOR NOW
+#  scrapper:
+#    build:
+#      context: ./scrapperapp
+#    container_name: scrapper
+#    depends_on:
+#      - mongo
+#    command: ["node", "scrapper.js"]
+
+  filter:
     build:
-      context: ./scrapperapp
-    container_name: scrapper
+      context: ./filterapp
+    container_name: filter
     depends_on:
       - mongo
-    command: ["node", "scrapper.js"]
+      - inserter
+    command: ["node", "filter.js"]
 
-  cache:
-    build:
-      context: ./cacheapp
-    container_name: cache
-    ports:
-      - "3000:3000"
-    depends_on:
-      - redis
-      - mongo
-    command: ["node", "cache.js"]
 
-  generator:
-    build:
-      context: ./generatorapp
-    container_name: generator
-    depends_on:
-      - cache
-    command: ["node", "trafficGenerator.js"]
+#TESTING THE FILTER, DONT NEED A CACHE FOR NOW
+#  cache:
+#    build:
+#      context: ./cacheapp
+#    container_name: cache
+#    ports:
+#      - "3000:3000"
+#    depends_on:
+#      - redis
+#      - mongo
+#    command: ["node", "cache.js"]
+
+#TESTING THE FILTER, DONT NEED A TRAFFIC GENERATOR FOR NOW
+#  generator:
+#    build:
+#      context: ./generatorapp
+#    container_name: generator
+#    depends_on:
+#      - cache
+#    command: ["node", "trafficGenerator.js"]
 
 volumes:
   mongo_data:
