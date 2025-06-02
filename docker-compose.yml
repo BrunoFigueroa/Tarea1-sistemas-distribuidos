@@ -1,6 +1,9 @@
 version: '3.8'
 
+# Esta entrega no pide cache ni generacion, asi que para ahorrar recursos del sistema, se van a desactivar redis, cacheapp y generatorapp
+
 services:
+
   mongo:
     image: mongo
     container_name: mongo
@@ -9,12 +12,12 @@ services:
     volumes:
       - mongo_data:/data/db
 
-  redis:
-    image: redis
-    container_name: redis
-    command: ["redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-random"]
-    ports:
-      - "6379:6379"
+#  redis:
+#    image: redis
+#    container_name: redis
+#    command: ["redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-random"]
+#    ports:
+#      - "6379:6379"
 
   inserter:
     build:
@@ -23,17 +26,18 @@ services:
     depends_on:
       - mongo
     volumes:
-      - ./databaseapp/events.json:/data/events.json
+      - ./databaseapp/DATA.json:/data/DATA.json
+      - ./databaseapp/DATA2.json:/data/DATA2.json
     command: ["node", "mongoSetter.js"]
 
-# TESTING THE FILTER, DONT NEED A SCRAPPER FOR NOW
-#  scrapper:
-#    build:
-#      context: ./scrapperapp
-#    container_name: scrapper
-#    depends_on:
-#      - mongo
-#    command: ["node", "scrapper.js"]
+  scrapper:
+    build:
+      context: ./scrapperapp
+    container_name: scrapper
+    depends_on:
+      - mongo
+    command: ["node", "scrapper.js"]
+
 
   filter:
     build:
@@ -44,8 +48,16 @@ services:
       - inserter
     command: ["node", "filter.js"]
 
+  pig:
+    build:
+      context: ./pigapp
+    container_name: pig
+    volumes:
+      - ./pigapp:/scripts
+      - ./pigapp/output:/scripts/output
+    working_dir: /scripts
+    command: ["pig", "-x", "local", "process.pig"]
 
-#TESTING THE FILTER, DONT NEED A CACHE FOR NOW
 #  cache:
 #    build:
 #      context: ./cacheapp
@@ -57,7 +69,6 @@ services:
 #      - mongo
 #    command: ["node", "cache.js"]
 
-#TESTING THE FILTER, DONT NEED A TRAFFIC GENERATOR FOR NOW
 #  generator:
 #    build:
 #      context: ./generatorapp
