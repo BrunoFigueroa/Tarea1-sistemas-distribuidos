@@ -1,160 +1,125 @@
-const puppeteer = require('puppeteer');
+const axios = require('axios');
 const { MongoClient } = require('mongodb');
 
-// NOMBRE DE DB, Y COLECCIONES
-const url = 'mongodb://mongo:27017';
-const dbName = 'trafficData';
-const collectionName = 'events';
-const counterCollectionName = 'counter';
+// Configuración de Mongo dentro de Docker
+const MONGO_URI = 'mongodb://mongo:27017';
+const DB_NAME = 'trafficData';
+const COLLECTION_NAME = 'events';
+const COUNTER_COLLECTION = 'counter';
 
-// CONEXION A MONGO (USANDO LA CONFIGURACION DE DOCKER)
+const AREA = {
+  top: -33.3,
+  bottom: -33.65,
+  left: -70.85,
+  right: -70.5
+};
+
+const STEP = 0.03;
+const INTERVAL_MS = 5000;
+const DATAMAX = 50000;
+
+const collectedData = [];
+const uniqueMap = new Map();
+
+function buildUrl(top, bottom, left, right) {
+  return `https://www.waze.com/live-map/api/georss?top=${top}&bottom=${bottom}&left=${left}&right=${right}&env=row&types=alerts,traffic,users`;
+}
+
+function extractData(raw) {
+  let combined = [];
+  if (raw.alerts) combined = combined.concat(raw.alerts);
+  if (raw.traffic) combined = combined.concat(raw.traffic);
+  if (raw.users) combined = combined.concat(raw.users);
+
+  return combined.map(item => ({
+    title: item.title || item.type || null,
+    category: item.subtype || item.type || null,
+    street: item.street || null,
+    city: item.city || null,
+    reporter: item.reportDescription || item.reportBy || null,
+    lat: item.location?.y || null,
+    lon: item.location?.x || null
+  }));
+}
+
 async function getDbConnection() {
-  const client = await MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-  const db = client.db(dbName);
+  const client = await MongoClient.connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  const db = client.db(DB_NAME);
   return { client, db };
 }
 
-// FUNCIONES UTILES PARA DESPUES, LA PRIMERA ES UN SLEEP(), LA SEGUNDA REVISA SI UN ELEMENTO HTML ES CLICKEABLE.
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-async function isClickable(element) {
-  const box = await element.boundingBox();
-  return box && box.width > 0 && box.height > 0;
-}
-
-//  ESTO ES EL SCRAPPER, FUNCIONA DE LA SIGUIENTE FORMA:
-//    1. ABRE CHROMIUM Y ENTRA A LA PAGINA DE WAZE.
-//    2. CIERRA EL POPUP DE INICIO EN WAZE, SI NO LO ENCUENTRA, PASA DE LARGO.
-//    3. ESPERA A QUE LO ELEMENTOS CARGUEN.
-//    4. CONSIGUE EL ID SERIAL DE MONGO (explicado en el apartado de mongo).
-//    5. INICIA EL CICLO INFINITO DE SCRAPPING.
-//    6. ESCANEA LOS EVENTOS CLICKEABLES Y LOS AGREGA A UNA LISTA, SI NO ENCUENTRA NINGUNO, ESPERA 3 SEGUNDOS Y SE PASA AL SIGUIENTE CICLO.
-//    7. SELECCIONA UNO DE LOS EVENTOS ALEATORIAMENTE.
-//    8. VE SI EL ELEMENTO SELECCIONADO ES CLICKEABLE.
-//    9. CLICKEA EL ELEMENTO Y CONSIGUE LA DATA USANDO SU CLASE HTML. (se tiene que simular el click, o waze no carga la data del elemento)
-//    10. INTRODUCE EL ELEMENTO COMO UN JSON A LA BASE DE DATOS MONGO, AGREGA TAMBIEN EL ID SERIAL Y LO ACTUALIZA.
-//    11. CIERRA EL EVENTO, Y ESPERA UNOS SEGUNDOS ANTES DE EMPEZAR EL SIGUIENTE BUCLE. (la espera es para evitar sobrecargar el servicio de waze, si lo tuviera funcionando sin ningun tipo de sleep(), se harian cientos de peticiones por segundo, y dependiendo del sistema implementado en waze, podria ser baneado, o denegado de servicio, lo cual complicaria el proceso de scrapping)
-//    12. SI HUBO UN ERROR, SE ENTIENDE QUE EL EVENTO CLICKEADO NO ERA VALIDO Y SE CONTINUA AL SIGUIENTE CICLO.
-
-(async () => {
-  const browser = await puppeteer.launch({
-    headless: true,
-    executablePath: '/usr/bin/chromium',
-    slowMo: 50,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'] //esto lo pide el docker, te obliga a ejecutar en no-sandbox.
-  });
-
-  // 1.
-  const page = await browser.newPage();
-
-  console.log('Launching browser and navigating to Waze live map...');
-  await page.goto('https://www.waze.com/en-US/livemap', { waitUntil: 'domcontentloaded' });
-
-  await page.waitForSelector('.waze-tour-tooltip__acknowledge', { timeout: 5000 }).catch(() => {
-    console.log('No initial "Got it" popup detected.');
-  });
-
-  // 2.
-  const gotItButton = await page.$('.waze-tour-tooltip__acknowledge');
-  if (gotItButton) {
-    console.log('Clicking the "Got it" button...');
-    await gotItButton.click();
-    await delay(2000);
-  } else {
-    console.log('No "Got it" button found, continuing...');
-  }
-
-  // 3.
-  await page.waitForSelector('.leaflet-marker-icon');
-  console.log('Map loaded and markers visible.');
-
-  // 4.
-  const { client, db } = await getDbConnection();
-  const eventsCollection = db.collection(collectionName);
-  const counterCollection = db.collection(counterCollectionName);
-
+async function getSerialId(counterCollection) {
   const counter = await counterCollection.findOne({ _id: 'event_counter' });
-  let serialId = counter ? counter.last_serial_id + 1 : 1;
+  return counter ? counter.last_serial_id + 1 : 1;
+}
 
-  console.log('Starting event data collection...');
+async function scrapeAndStore(eventsCollection, counterCollection, serialIdRef) {
+  for (let lat = AREA.bottom; lat < AREA.top; lat += STEP) {
+    for (let lon = AREA.left; lon < AREA.right; lon += STEP) {
+      const url = buildUrl(lat + STEP, lat, lon, lon + STEP);
 
-  // 5.
-  while (true) {
-    // 6.
-    let markers = await page.$$('.leaflet-marker-icon');
-    console.log(`Found ${markers.length} markers.`);
+      try {
+        const response = await axios.get(url);
+        const extracted = extractData(response.data);
 
-    if (markers.length === 0) {
-      console.log('No events found. Retrying...');
-      await delay(3000);
-      continue;
-    }
+        for (const item of extracted) {
+          const key = `${item.title}|${item.category}|${item.lat}|${item.lon}`;
+          if (!uniqueMap.has(key)) {
+            uniqueMap.set(key, item);
+            item.serial_id = serialIdRef.value++;
 
-    // 7.
-    const randomMarkerIndex = Math.floor(Math.random() * markers.length);
-    const selectedMarker = markers[randomMarkerIndex];
+            await eventsCollection.insertOne(item);
 
-    try {
-      console.log(`Clicking marker ${randomMarkerIndex + 1}...`);
+            console.log("Evento insertado");
 
-      // 8.
-      const clickable = await isClickable(selectedMarker);
-      if (!clickable) {
-        console.log(`Marker ${randomMarkerIndex + 1} is not clickable. Skipping...`);
-        continue;
-      }
-
-      await selectedMarker.click();
-
-      // 9.
-      const timeout = 1000;
-      await page.waitForSelector('.leaflet-popup-content-wrapper', { timeout: timeout })
-        .catch(e => console.log(`Popup timeout: Timeout exceeded ${timeout}ms`));
-
-      const eventData = await page.evaluate(() => {
-        const popup = document.querySelector('.leaflet-popup-content-wrapper');
-        if (!popup) return null;
-
-        const title = popup.querySelector('.wm-alert-details__title')?.innerText || 'Unknown';
-        const address = popup.querySelector('.wm-alert-details__address')?.innerText || 'Unknown';
-        const reporter = popup.querySelector('.wm-alert-details__reporter-name')?.innerText || 'Unknown';
-        const time = popup.querySelector('.wm-alert-details__time')?.innerText || 'Unknown';
-        return { title, address, reporter, time };
-      });
-
-      // 10.
-      if (eventData) {
-        eventData.serial_id = serialId++;
-        
-        await eventsCollection.insertOne(eventData);
-        console.log(`Event inserted with serial ID: ${eventData.serial_id}`);
-        
-        await counterCollection.updateOne(
-          { _id: 'event_counter' },
-          { $set: { last_serial_id: serialId - 1 } }
-        );
-      } else {
-        console.log('No data found in the popup.');
-      }
-
-      // 11.
-      await page.evaluate(() => {
-        const closeButton = document.querySelector('.leaflet-popup-close-button');
-        if (closeButton) closeButton.click();
-      });
-
-      await delay(1000);
-
-      // 12.
-    } catch (error) {
-        if (error.message.includes('Node is either not clickable or not an Element')) {
-            console.log(`Error with marker ${randomMarkerIndex + 1}: Marker is not clickable or not an element.`);
-          } else {
-            console.log('Error with event marker:', error);
+            await counterCollection.updateOne(
+              { _id: 'event_counter' },
+              { $set: { last_serial_id: item.serial_id } },
+              { upsert: true }
+            );
           }
-    }
 
-    await delay(2000);
+          collectedData.push(item);
+          if (collectedData.length >= DATAMAX) return true;
+        }
+      } catch (err) {
+        console.error("Error fetching data:", err.message);
+      }
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
   }
-})();
+  return false;
+}
+
+async function main() {
+
+  await new Promise(resolve => setTimeout(resolve, 2500));
+
+  const { client, db } = await getDbConnection();
+  const eventsCollection = db.collection(COLLECTION_NAME);
+  const counterCollection = db.collection(COUNTER_COLLECTION);
+
+  let serialId = await getSerialId(counterCollection);
+  const serialIdRef = { value: serialId };
+
+  console.log("Comenzando scrapping geográfico de Waze...");
+
+  const interval = setInterval(async () => {
+    const finished = await scrapeAndStore(eventsCollection, counterCollection, serialIdRef);
+
+    console.log(`Eventos únicos insertados: ${uniqueMap.size}`);
+    console.log(`Total acumulado en memoria: ${collectedData.length}/${DATAMAX}`);
+
+    if (finished) {
+      clearInterval(interval);
+      await client.close();
+      console.log("Scrapping completado y conexión cerrada.");
+    }
+  }, INTERVAL_MS);
+}
+
+main();

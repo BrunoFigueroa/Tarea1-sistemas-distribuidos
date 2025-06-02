@@ -1,0 +1,886 @@
+"Lazo",1
+"Lira",1
+"Lugo",3
+"Viel",3
+"Arica",6
+"Creta",1
+"Llico",1
+"Marte",1
+"Maule",1
+"Orán",1
+"Radal",3
+"Renca",1
+"Sucre",2
+"Urano",1
+"Acceso",1
+"Bilbao",1
+"Bremen",4
+"Bustos",1
+"Carmen",5
+"Colón",3
+"El Cid",2
+"Fresia",3
+"Gandhi",2
+"Gorbea",1
+"Huasco",1
+"Idumea",1
+"Kepler",1
+"Lircay",1
+"Maipú",1
+"Maruri",1
+"Marín",4
+"Merced",2
+"Moneda",1
+"Olimpo",1
+"Quebec",1
+"Retiro",1
+"Rivera",2
+"Sazié",1
+"Toesca",2
+"Bandera",1
+"Central",3
+"Concón",4
+"Coronel",3
+"Curicó",1
+"Dolores",2
+"Duqueco",1
+"El Pino",2
+"Estoril",1
+"Flandes",1
+"Francia",1
+"Hotel W",1
+"Huelén",5
+"Juanita",1
+"Lautaro",2
+"Lincura",1
+"Lo Boza",2
+"Londres",1
+"Mapocho",5
+"Mendoza",1
+"Miqueas",1
+"Negrete",1
+"Neptuno",2
+"Nocedal",4
+"Orleans",6
+"Retorno",3
+"Ruta 68",24
+"Ruta 78",39
+"Ruta 79",15
+"Tucapel",1
+"Varinia",1
+"Vecinal",1
+"Afluente",1
+"Aldunate",1
+"Amapolas",6
+"América",3
+"Av. Ossa",35
+"Brasilia",1
+"Bucarest",1
+"Canberra",2
+"Catedral",9
+"Chilonga",1
+"Coventry",1
+"Don Luis",1
+"Doñihue",1
+"El Abeto",1
+"El Cobre",1
+"El Ombú",1
+"El Piano",3
+"El Sauce",1
+"Escorial",1
+"Franklin",1
+"Grajales",1
+"Latadía",5
+"Libertad",3
+"Manutara",1
+"Matucana",1
+"Monjitas",5
+"Montreal",1
+"Morandé",3
+"Paicaví",1
+"Pasaje 1",1
+"San Luis",1
+"Siglo XX",3
+"Teatinos",3
+"Tegualda",1
+"Turquesa",1
+"Urmeneta",5
+"Vaticano",1
+"Victoria",3
+"Waterloo",1
+"Agustinas",1
+"Arcángel",1
+"Artesanos",5
+"Av. Macul",7
+"Av. Peró",1
+"Av. Perú",3
+"Av. Suiza",2
+"Aviadores",1
+"Baquedano",1
+"Boccaccio",1
+"Brown Sur",3
+"Campoamor",1
+"Canelillo",1
+"Cauquenes",2
+"Concordia",2
+"Dardignac",3
+"Dr. Johow",3
+"Dunkerque",1
+"El Ariete",1
+"El Bosque",1
+"El Carmen",1
+"El Gabino",1
+"El Molino",1
+"El Olivar",1
+"El Vergel",1
+"Escanilla",2
+"Esmeralda",1
+"Galvarino",2
+"Gran Vía",2
+"La Aduana",1
+"La Estera",3
+"La Granja",4
+"La Unión",2
+"Lo Moreno",1
+"Lo Ovalle",1
+"Los Olmos",1
+"Luis Olea",1
+"Lynch Sur",2
+"Monvoisin",3
+"Patagonia",1
+"Petrobras",1
+"Pío Nono",2
+"Quilicura",1
+"Rivadavia",1
+"Ruta G-16",11
+"Sagitario",1
+"San Jorge",1
+"San José",10
+"Santa Ana",2
+"Ureta Cox",2
+"Uspallata",1
+"Villasana",1
+"Villaseca",1
+"Av. Brasil",4
+"Av. Dorsal",17
+"Av. Egaña",3
+"Av. Grecia",24
+"Av. La Paz",2
+"Av. Olimpo",1
+"Av. Pocuro",1
+"Av. Suecia",16
+"Av. Yungay",2
+"Bellavista",7
+"Campanario",1
+"Centenario",4
+"Chesterton",2
+"Costa Rica",1
+"Curiñanca",1
+"Del Trigal",1
+"El Alamein",1
+"El Cortijo",2
+"El Manzano",1
+"El Topacio",1
+"El Tranque",2
+"Eucaliptus",3
+"Eyzaguirre",1
+"Huechuraba",1
+"Huérfanos",1
+"Jacarandá",1
+"La Bandera",2
+"La Cabaña",1
+"Las Viñas",1
+"Los Boldos",1
+"Los Sauces",1
+"Macul Alto",1
+"Mercedario",1
+"Montenegro",2
+"Nonato Coo",2
+"Paso Hondo",1
+"Peatones 7",1
+"Rondizzoni",2
+"Varas Mena",1
+"6ª Avenida",1
+"Arturo Prat",1
+"Av. Condell",1
+"Av. Ecuador",1
+"Av. España",1
+"Av. Guanaco",2
+"Av. Holanda",10
+"Av. Juanita",1
+"Av. Le Mans",1
+"Av. México",3
+"Av. Neptuno",1
+"Av. Nueva 1",1
+"Av. Quilín",16
+"Av. Serrano",1
+"Brown Norte",2
+"Calle local",1
+"Caupolicán",2
+"Conferencia",2
+"El Chercán",1
+"El Tamarugo",1
+"Fraternidad",1
+"Gaspar Toro",1
+"Julio Prado",2
+"La Palmilla",2
+"La Victoria",1
+"Las Encinas",1
+"Las Ágatas",1
+"Los Alerces",1
+"Los Boteros",1
+"Los Carrera",1
+"Los Cerezos",1
+"Luis Durand",1
+"Mallinkrodt",1
+"Pasaje Roma",1
+"Paul Harris",2
+"Peatones 11",1
+"Pérez Ossa",1
+"Reino Unido",1
+"Rosario Sur",1
+"Río Ganges",1
+"Salida 25 A",1
+"San Alfonso",3
+"San Eugenio",1
+"San Rogelio",1
+"Santa Clara",1
+"Santa Elena",15
+"Santa Ester",1
+"Santa Inés",7
+"Santa Julia",1
+"Santa Luisa",3
+"Santa Marta",2
+"Teresa Vial",4
+"Tomás Moro",2
+"10ª Avenida",1
+"Abate Molina",1
+"Aguas Claras",6
+"Av. Colorado",1
+"Av. Einstein",4
+"Av. El Peral",2
+"Av. El Rosal",2
+"Av. El Salto",4
+"Av. Gabriela",2
+"Av. Larraín",2
+"Av. Marathon",1
+"Av. Matucana",1
+"Av. Oriental",2
+"Av. Portales",7
+"Av. Rancagua",7
+"Av. Recoleta",6
+"Av. Salvador",8
+"Av. Tobalaba",27
+"Av. Trinidad",4
+"Av. Vitacura",6
+"Barros Arana",1
+"Bernard Shaw",3
+"Briones Luco",1
+"Chayavientos",2
+"Chorrillos 3",9
+"Club Hípico",2
+"Cruz Almeyda",3
+"El Acueducto",2
+"Elena Blanco",1
+"Froilán Roa",2
+"Las Camelias",1
+"Las Naciones",1
+"Las Peonías",1
+"Lo Marcoleta",4
+"Longitudinal",18
+"Los Hidalgos",1
+"Los Jacintos",1
+"Los Maitenes",1
+"Los Pintores",2
+"Manuel Montt",8
+"Mar de Drake",1
+"María Elena",4
+"Miguel Claro",1
+"Mirador Azul",3
+"Nueva Bilbao",2
+"Pablo Neruda",1
+"Pasaje 1 Sur",1
+"Peaje Manual",1
+"Puerto Montt",6
+"Punta Arenas",2
+"Rafael Matus",1
+"Raúl Labbé",1
+"Ruta 5 Norte",25
+"Santa Amalia",2
+"Santa Corina",1
+"Santa Isabel",5
+"Santa Lucía",1
+"Toro Mazotte",1
+"Zapata Lillo",1
+"12 de Febrero",1
+"Alberto Llona",3
+"Antonia Silva",1
+"Aníbal Pinto",2
+"Arturo Burhle",1
+"Av. Antumalal",2
+"Av. Apoquindo",17
+"Av. Argentina",1
+"Av. Carrascal",2
+"Av. El Juncal",1
+"Av. La Dehesa",1
+"Av. Lo Blanco",4
+"Av. Lo Espejo",23
+"Av. Lo Moreno",1
+"Av. Lo Ovalle",9
+"Av. Los Mares",1
+"Av. Los Toros",2
+"Av. Manquehue",4
+"Av. O'Higgins",4
+"Av. Pajaritos",35
+"Av. San Pablo",9
+"Av. del Valle",2
+"Calle Abogado",1
+"Cano y Aponte",1
+"Capitán Prat",1
+"Claudio Arrau",1
+"Costanera Sur",6
+"Del Sembrador",1
+"Departamental",3
+"Diego Zenteno",1
+"Domingo Bondi",1
+"Emilio Vaisse",1
+"Guanaco Norte",1
+"Independencia",1
+"Juan Pablo II",1
+"Las Américas",1
+"Las Zarcillas",2
+"Lo Bascuñán",1
+"Los Flamencos",1
+"Los Gladiolos",1
+"Los Militares",3
+"Los Trapenses",3
+"Luis Galdames",1
+"Miguel Ángel",1
+"Monte Palomar",1
+"Muñoz Gamero",1
+"Nueva Tajamar",3
+"Padre Hurtado",5
+"Puente La Paz",1
+"Puente Suecia",1
+"Puerto Madero",5
+"Romeo Salinas",2
+"San Francisco",5
+"Santa Adriana",3
+"Santa Zenobia",2
+"Santo Domingo",4
+"Santos Dumont",1
+"Vasco de Gama",1
+"Vicente Reyes",1
+"Vicuña Rozas",5
+"Antonio Valech",1
+"Av. 4 Poniente",1
+"Av. 5 de Abril",13
+"Av. Cañaveral",3
+"Av. Colón Sur",11
+"Av. Echeñique",6
+"Av. El Líbano",2
+"Av. El Parrón",3
+"Av. El Peñón",3
+"Av. Eyzaguirre",15
+"Av. Hugo Bravo",10
+"Av. La Farfana",4
+"Av. La Florida",14
+"Av. Las Condes",12
+"Av. Las Torres",13
+"Av. Los Leones",7
+"Av. Ochagavía",4
+"Av. San Carlos",6
+"Av. Santa Rosa",25
+"Bahía Inglesa",1
+"Blanco Fombona",1
+"Camino Central",3
+"Camino El Alba",3
+"Camino Otoñal",1
+"Carlos Dávila",1
+"Cerro Colorado",1
+"Coronel Robles",4
+"Cuatro Álamos",1
+"Dublé Almeyda",5
+"Eliecer Parada",5
+"García Moreno",3
+"General Freire",1
+"Gustavo Eiffel",2
+"Hermanos Cabot",1
+"Isabel Carrera",2
+"La Concepción",1
+"Las Tranqueras",1
+"Los Matriceros",2
+"Los Oceánicos",1
+"Los Soldadores",1
+"Monja Alférez",2
+"Nueva Imperial",4
+"Nueva Tobalaba",3
+"Pasaje El Pino",1
+"Retorno al Sur",1
+"Ricardo Wagner",2
+"Rigoberto Jara",1
+"Ruta 5 > Norte",1
+"San Bartolomé",1
+"Santa Filomena",1
+"Santa Mercedes",1
+"Santa Victoria",1
+"Teniente Ponce",1
+"Tomás Guevara",1
+"Troncos Viejos",1
+"Vespucio Norte",3
+"4ª Transversal",2
+"Adolfo Ibáñez",1
+"Av. Combarbalá",1
+"Av. El Alfalfal",1
+"Av. El Descanso",1
+"Av. El Porvenir",2
+"Av. Ferrocarril",5
+"Av. La Estrella",2
+"Av. Las Acacias",4
+"Av. Providencia",22
+"Av. San Ignacio",2
+"Av. Santa Anita",2
+"Bahía Fitz Roy",1
+"Baldomero Lillo",1
+"Bombero Núñez",1
+"Camino Catemito",1
+"Camino interior",1
+"Carlos Antúnez",3
+"Carlos Dittborn",3
+"Costanera Norte",1
+"General Blanche",1
+"General Körner",1
+"Glorias Navales",3
+"Humberto Trucco",1
+"Ismael Briceño",1
+"Kennedy lateral",7
+"Nemesio Vicuña",2
+"Nueva O'Higgins",2
+"Pasaje Aliolín",1
+"Pasaje Chiclana",1
+"Perpetua Freire",1
+"Primo de Rivera",2
+"Puente Lo Curro",1
+"Puente Petersen",1
+"Puerto Santiago",1
+"Ramón Carnicer",2
+"Río de Janeiro",1
+"Santa Elena Sur",1
+"Santa Margarita",1
+"Tercera Avenida",1
+"Vital Apoquindo",1
+"Acceso a Ruta 79",1
+"Alonso de Monroy",1
+"Av. Consistorial",5
+"Av. Irarrázaval",10
+"Av. Las Parcelas",5
+"Av. Las Perdices",2
+"Av. Lía Aguirre",1
+"Av. Observatorio",2
+"Av. Punta Arenas",1
+"Av. Ricardo Lyon",2
+"Av. Santa Leonor",2
+"Av. Santa María",7
+"Av. Santa Raquel",4
+"Av. Santo Tomás",1
+"Av. Víctor Jara",2
+"Brisas del Maipo",2
+"Camino del Cerro",2
+"Carlos Ossandón",1
+"Cerro Portezuelo",1
+"Diagonal Oriente",3
+"Ernesto Riquelme",1
+"Eulogia Sánchez",1
+"Gabriela Mistral",2
+"General Amengual",5
+"General Mackenna",1
+"Guillermo Acuña",1
+"Jorge Alessandri",1
+"Jorge Washington",1
+"Lomas del Parque",1
+"Martín Sánchez",1
+"María Angélica",1
+"María Magdalena",1
+"María del Pilar",1
+"Matías Cousiño",1
+"Nueva Centenario",2
+"Poema El Regreso",1
+"Rodrigo de Araya",8
+"Rojas Magallanes",1
+"San Juan de Dios",1
+"Sánchez lateral",1
+"Tucapel Jiménez",1
+"Vicuña Mackenna",5
+"Werner Von Braun",1
+"Álvaro Casanova",1
+"Alejandro Guzmán",1
+"Almirante Barroso",1
+"Almirante Riveros",2
+"Almirante Simpson",1
+"Arzobispo Vicuña",1
+"Autopista Central",62
+"Autopista Kennedy",9
+"Av. Antonio Varas",5
+"Av. Claudio Arrau",4
+"Av. Concha y Toro",5
+"Av. Costanera Sur",2
+"Av. Departamental",31
+"Av. Guanaco Norte",2
+"Av. Independencia",41
+"Av. José Arrieta",5
+"Av. Lago Rosselot",1
+"Av. Las Rejas Sur",4
+"Av. Lo Errázuriz",3
+"Av. Los Cerrillos",1
+"Av. Los Molineros",5
+"Av. Los Zapadores",1
+"Av. Manquehue Sur",2
+"Av. Padre Hurtado",14
+"Av. Pedro Fontova",1
+"Av. Quilín Norte",2
+"Av. Salomón Sack",1
+"Av. San Francisco",4
+"Aves del Paraíso",3
+"Camino al Volcán",2
+"Comandante Malbec",5
+"Corredor de buses",1
+"Diagonal Paraguay",2
+"Fernández Albano",1
+"Florencio Barrios",5
+"General Arriagada",6
+"General Ordóñez",1
+"General del Canto",1
+"Juan Moya Morales",1
+"Julio Covarrubias",6
+"La Montaña Norte",1
+"Leonardo da Vinci",6
+"Los Cuasimodistas",1
+"Los Tres Antonios",1
+"Luis Thayer Ojeda",3
+"Manuel Rodríguez",1
+"Martín de Zamora",2
+"Monseñor Edwards",4
+"Nicasio Retamales",2
+"Nueva San Martín",1
+"Parque Cordillera",1
+"Pasaje Talcahuano",1
+"Pascual Baburizza",1
+"Paula Jaraquemada",1
+"Pedro de Valdivia",1
+"Salida > El Rosal",1
+"Salida > Oceanía",1
+"Valenzuela Puelma",7
+"Av. Clotario Blest",2
+"Av. Diego Portales",1
+"Av. Eliecer Parada",1
+"Av. Ernesto Alvear",1
+"Av. Esquina Blanca",1
+"Av. Las Industrias",3
+"Av. Ramón Venegas",1
+"Av. Santa Victoria",2
+"Camino El Cruceral",1
+"Camino Piedra Roja",1
+"Camino Punta Mocha",1
+"Casas de Lo Espejo",1
+"Cóndores de Chile",1
+"Dr. Guillermo Mann",2
+"Dr. Luis Middleton",1
+"Gaspar de Espinoza",1
+"General Bustamante",11
+"General Velásquez",1
+"Isidora Goyenechea",4
+"Jorge Matte Gormaz",1
+"Las Nieves Oriente",1
+"Los Conquistadores",5
+"López de Alcázar",1
+"Paso Alto Poniente",1
+"Paso Superior Enea",1
+"Puente Ronald Wood",1
+"Quebrada Camarones",2
+"Rinconada de Chena",5
+"Salvador Izquierdo",1
+"Av. Bahía Catalina",1
+"Av. Calera de Tango",7
+"Av. Chile - España",7
+"Av. Isabel Riquelme",11
+"Av. Jorge Ross Ossa",3
+"Av. Los Presidentes",10
+"Av. Manquehue Norte",3
+"Av. Ricardo Cumming",3
+"Av. Simón Bolívar",10
+"Bascuñán Guerrero",2
+"Batallón Chacabuco",2
+"Caletera Acceso Sur",12
+"Calle del Arzobispo",1
+"Exequiel Fernández",3
+"Francisco de Toledo",1
+"General San Martín",10
+"Hernando de Aguirre",7
+"Isabel La Católica",3
+"Las Azaleas Oriente",1
+"Leoncio Villablanca",1
+"Libertador de Chile",1
+"Pedro Aguirre Cerda",1
+"Ramón Subercaseaux",2
+"Retorno > Las Rejas",1
+"Retorno al Poniente",2
+"San Alberto Hurtado",4
+"San Vicente de Paul",1
+"Tercera Transversal",1
+"Abraham Prado Marín",1
+"Autopista Nororiente",6
+"Av. Diego de Almagro",3
+"Av. Domingo Tocornal",3
+"Av. Eliodoro Yáñez",14
+"Av. Fermín Vivaceta",14
+"Av. Francisco Bilbao",23
+"Av. Las Torres Norte",1
+"Av. Los Libertadores",1
+"Av. Portales Oriente",1
+"Av. Salvador Allende",10
+"Av. Vicuña Mackenna",24
+"Av. Walker Martínez",1
+"Bartolomé Mandujano",1
+"Camino El Barrancón",2
+"Compañía de Jesús",2
+"Dragones de la Reina",2
+"Francisco de Aguirre",1
+"General Carol Urzúa",1
+"General John O'Brien",2
+"Horacio Ried Carrera",1
+"José Domingo Cañas",1
+"José Manuel Infante",2
+"José Miguel Carrera",3
+"Juan Esteban Montero",2
+"Monseñor Eyzaguirre",1
+"Obispo Manuel Umaña",1
+"Presidente de Gaulle",1
+"República de Israel",3
+"Salida 26 > Petersen",1
+"Salida 5 > Manquehue",1
+"Salida >Mirador Azul",1
+"Salida>Departamental",1
+"Universidad de Chile",1
+"Alcalde Alberto Krumm",1
+"Alerce Andino Oriente",1
+"Andrés de Fuenzalida",1
+"Augusto Leguía Norte",1
+"Av. Américo Vespucio",83
+"Av. Apóstol Santiago",4
+"Av. Camilo Henríquez",10
+"Av. Campo de Deportes",1
+"Av. Carlos Valdovinos",4
+"Av. Cristóbal Colón",7
+"Av. Escuela Agrícola",2
+"Av. Fernández Albano",2
+"Av. Gabriela Poniente",4
+"Av. Manuel Rodríguez",12
+"Av. Nueva Providencia",7
+"Av. Padre Hurtado Sur",11
+"Av. Pedro de Valdivia",20
+"Av. Presidente Riesco",6
+"Av. Sargento Menadier",4
+"Calderón de la Barca",1
+"Francisco de Villagra",1
+"Gerónimo de Alderete",1
+"José Joaquín Pérez",2
+"Julio Montt Salamanca",1
+"Padre Alfredo Arteaga",1
+"Presidente Errázuriz",1
+"San Ignacio de Loyola",2
+"San Martín de Porres",1
+"Víctor Domingo Silva",1
+"Acceso Costanera Norte",1
+"Autopista Vespucio Sur",59
+"Av. Alonso de Córdova",2
+"Av. Bernardo O'Higgins",3
+"Av. General Velásquez",1
+"Av. La Florida lateral",1
+"Av. Presidente Kennedy",4
+"Av. Príncipe de Gales",7
+"Av. Vitacura > Oriente",1
+"Dr. Carlos Lorca Tobar",4
+"Fray Camilo Henríquez",1
+"Guardiamarina Riquelme",1
+"Hacia Pajaritos al Sur",1
+"Hernando de Magallanes",2
+"Ismael Valdés Vergara",1
+"Juan de Dios Malebrán",2
+"Martín Alonso Pinzón",2
+"María Luisa Santander",3
+"Pasaje Apóstol Felipe",1
+"Rafael Riesco Bernales",1
+"San Francisco de Asís",1
+"San Francisco de Borja",2
+"San José de la Sierra",1
+"Santa Magdalena Sofía",1
+"Vicente Pérez Rosales",3
+"Antonia López de Bello",2
+"Av. General San Martín",1
+"Av. Las Acacias > Norte",1
+"Av. Luis Matte Larraín",1
+"Av. Pedro Aguirre Cerda",9
+"Av. Pedro Fontova Norte",5
+"Av. Primera Transversal",1
+"Av. Segunda Transversal",1
+"Camino La Vara Poniente",1
+"Condominio Vista Gamero",1
+"Cordillera de Los Andes",8
+"Elisa Correa Sanfuentes",1
+"José Francisco Vergara",1
+"Salida>Vicuña Mackenna",1
+"Alejandro Ríos Valdivia",1
+"Autopista Vespucio Norte",41
+"Av. Domingo Santa María",1
+"Av. Ejército Libertador",5
+"Av. Gladys Marín Millie",2
+"Av. José Miguel Infante",2
+"Av. Lo Espejo > Poniente",1
+"Av. Manuel Antonio Matta",17
+"Av. Presidente Balmaceda",3
+"Camino La Capilla de Nos",3
+"Condominio Los Otoñales",1
+"Cordillera de Nahuelbuta",1
+"Ernesto Pinto Lagarrigue",1
+"José Miguel de la Barra",2
+"Las Palomas de San José",4
+"Nueva Príncipe de Gales",4
+"Paso Inferior La Bandera",1
+"Paso Superior Las Palmas",1
+"Salida 33 > Gran Avenida",1
+"Santa Rosa de Huechuraba",3
+"Vital Apoquindo interior",1
+"Autopista Costanera Norte",18
+"Av. Américo Vespucio Sur",11
+"Av. General Juan Buendía",1
+"Av. José Alcalde Délano",1
+"Av. José Joaquín Pérez",1
+"Av. José Manuel Borgoño",1
+"Av. Padre Alberto Hurtado",7
+"Av. Troncal San Francisco",1
+"Av. Virginia Subercaseaux",5
+"Camino a Lonquén lateral",1
+"Diputada Laura Rodríguez",1
+"Federico Mistral Poniente",2
+"Paso bajo nivel / Coronel",2
+"Periodista José Saldaño",1
+"Roberto Durán Valenzuela",1
+"Santa Elena de Huechuraba",4
+"Acceso a Autopista Central",2
+"Autopista Vespucio Oriente",6
+"Av. 10 de Julio Huamachuco",1
+"Av. Alfredo Silva Carvallo",3
+"Av. General Óscar Bonilla",3
+"Av. José Manuel Balmaceda",1
+"Av. José Pedro Alessandri",8
+"Depósito Express Pudahuel",5
+"Padre Vicente Irarrázaval",1
+"Alcalde Manuel de la Lastra",2
+"Av. Américo Vespucio Norte",10
+"Av. Costanera Andrés Bello",11
+"Av. María Rozas Velásquez",3
+"Capellán Florencio Infante",1
+"Doctor Pedro Lautaro Ferrer",1
+"Hacia Vespucio Nor-Poniente",1
+"Mariano Sánchez Fontecilla",7
+"Nuestra Señora del Rosario",2
+"Salida 17 > Mercado Central",1
+"Salida 21a-S > San Bernardo",1
+"Acceso Ruta 68 > Valparaíso",3
+"Av. Alcalde Jorge Monckeberg",4
+"Av. San José de la Estrella",2
+"Av. Vicuña Mackenna Oriente",1
+"Paso inferior Av. Las Torres",3
+"Ruta 76 / Camino a Melipilla",7
+"Salida 39 > Vicuña Mackenna",1
+"Vespucio / Puente Centenario",1
+"Av. Almirante Blanco Encalada",5
+"Av. Américo Vespucio > Norte",1
+"Av. Joaquín Walker Martínez",1
+"Av. Vicuña Mackenna Poniente",3
+"Conexión a Camino a Lonquén",1
+"Paso nivel acceso San Ignacio",1
+"Ruta G-260 / Camino El Trebal",1
+"Ruta G-30 / Camino a Lonquén",25
+"Salida 34 > Almirante Latorre",1
+"Acceso Autopista Central > Sur",2
+"Acceso Ruta 5 Norte > Santiago",2
+"Av. Cardenal José María Caro",3
+"Salida 35 > Avenida Santa Rosa",1
+"Acceso Autopista Vespucio Norte",1
+"Acceso a Autopista Vespucio Sur",5
+"Av. Jorge Alessandri Rodríguez",1
+"Cardenal Raúl Silva Henríquez",7
+"Estadio Trasandino de Los Andes",1
+"Isla Grande de Tierra del Fuego",1
+"Padre Felipe Gómez de Vidaurre",1
+"Romeo Salinas (Pista Izquierda)",1
+"Ruta G-18 / Camino El Noviciado",1
+"Salida a Av. Vespucio > Ruta 78",1
+"Acceso a Autopista Central > Sur",1
+"Av. Central Gonzalo Pérez Llona",3
+"Av. Dr. Amador Neghme Rodríguez",1
+"Av. Teniente Luis Cruz Martínez",10
+"Camino Santa Teresa de Los Andes",2
+"Paso bajo nivel / Froilán Lagos",2
+"Ruta G-182 / Camino El Noviciado",2
+"Salida 37 > Avenida Punta Arenas",1
+"Autopista Central / Eje Norte-Sur",5
+"Av. Libertador Bernardo O'Higgins",29
+"Costanera Manuel Magallanes Moure",1
+"Gran Avenida José Miguel Carrera",30
+"Paso bajo nivel / Av. Santa Julia",3
+"Salida 1a-N > San Pablo / Mapocho",1
+"Salida > El Molino / Lo Marcoleta",1
+"Salida Depósito Express Pudahuel",1
+"Acceso Autopista Kennedy > Oriente",1
+"Acceso a Camino a Lonquén > Norte",1
+"Lomas de Mirasur / General Urrutia",1
+"Presidente Arturo Alessandri Palma",1
+"Salida 11 > Av. Arica / 5 de Abril",1
+"Salida Camino a Rinconada > Maipú",1
+"Salida Presidente Riesco > Oriente",2
+"Acceso Autopista Kennedy > Poniente",1
+"Acceso Estacionamiento Subterráneo",1
+"Acceso a Autopista Central > Ruta 5",1
+"Autopista Costanera Norte > Oriente",1
+"Av. Cardenal Raúl Silva Henríquez",14
+"Av. Contraalmirante Fernández Vial",1
+"Presidente Gabriel González Videla",1
+"Presidente José Batlle y Ordóñez",7
+"Salida > Las Condes / Independencia",2
+"Acceso a Autopista Kennedy > Oriente",1
+"Av. Alcalde Eduardo Castillo Velasco",1
+"Av. Presidente Eduardo Frei Montalva",11
+"Salida 8B > Ruta 5 Norte / La Serena",3
+"Av. Pdte. Jorge Alessandri Rodríguez",15
+"Salida 21 > San Pablo / Claudio Arrau",1
+"Alonso de Córdova / Kennedy > Oriente",2
+"Salida 6-S > Departamental / Lo Ovalle",2
+"Av. San Josemaría Escrivá de Balaguer",4
+"Ruta 57 CH / Autopista Los Libertadores",15
+"Autopista Central - Eje Gral. Velásquez",24
+"Salida 27 > Segunda Transversal / Riesco",1
+"Salida Autopista Vespucio Sur > Poniente",2
+"Av. Presidente José Joaquín Prieto Vial",19
+"Salida Av. Eduardo Frei > Av. La Montaña",1
+"Acceso Autopista Costanera Norte > Oriente",1
+"Los Conquistadores / Túnel San Cristóbal",3
+"Salida a Américo Vespucio Sur > Cerrillos",1
+"Acceso Autopista Costanera Norte > Poniente",4
+"Av. Presidente Sebastián Piñera Echenique",2
+"Corredor transporte público Las Industrias",1
+"Salida 10b-S > Santa Margarita / Puerta Sur",2
+"Acceso a Autopista Costanera Norte > Poniente",1
+"Corredor transporte público Vicuña Mackenna",1
+"Salida Calle Local > Independencia / Vespucio",2
+"Salida 12-S > General Velásquez / Las Acacias",1
+"Acceso Autopista Nororiente > Chicureo / Ruta 5",1
+"Salida 8c-S > Av. Américo Vespucio al Poniente",1
+"Salida 3 > Costanera Norte / Autopista Nororiente",1
+"Salida Autopista Vespucio Norte > Ruta 5 / Aeropuerto",2
+"Salida Américo Vespucio > Maipú / Ruta 68 / Aeropuerto",1
+"Acceso Autopista Américo Vespucio > Ruta 68 / Las Condes",1
+"Providencia - Vitacura - Kennedy por Túnel San Cristóbal",1
+"Acceso a Autopista Américo Vespucio > Ruta 68 / Las Condes",1
+"Salida a Vespucio Norte Express > La Florida / 5 Sur / Maipú",1

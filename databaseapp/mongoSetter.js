@@ -9,9 +9,14 @@ const counterCollectionName = 'counter';
 
 // FUNCION PARA INSERTAR LOS EVENTOS.
 async function insertData() {
+
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
   try {
     // LEER EL ARCHIVO events.json Y GUARDARLO EN UNA VARIABLE.
-    const data = JSON.parse(fs.readFileSync('/data/events.json', 'utf-8'));
+    const data1 = JSON.parse(fs.readFileSync('/data/DATA.json', 'utf-8'));
+    const data2 = JSON.parse(fs.readFileSync('/data/DATA2.json', 'utf-8'));
+    const data = [...data1, ...data2];
 
     // CONECTARSE A MONGO.
     const client = await MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -51,8 +56,14 @@ async function insertData() {
       { $set: { last_serial_id: serial_id - 1 } }
     );
 
+    console.log("Example record before insert:");
+    console.log(JSON.stringify(eventsWithSerialId[0], null, 2));
+
     // INGRESA LA DATA A MONGO
     const result = await eventsCollection.insertMany(eventsWithSerialId);
+
+    const sample = await eventsCollection.findOne({ serial_id: 1 });
+  console.log("Sample inserted document:", sample);
 
     console.log(`${result.insertedCount} events inserted successfully with serial_id!`);
     client.close();
