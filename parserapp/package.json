@@ -1,0 +1,9 @@
+{
+  "name": "parserapp",
+  "version": "1.0.0",
+  "main": "jsonToCsv.js",
+  "type": "commonjs",
+  "dependencies": {
+    "json2csv": "^5.0.7"
+  }
+}

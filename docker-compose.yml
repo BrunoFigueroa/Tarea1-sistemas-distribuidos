@@ -1,0 +1,128 @@
+version: '3.8'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis
+    container_name: redis
+    command: ["redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-random"]
+    ports:
+      - "6379:6379"
+  
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.14
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - elk
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.14
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk
+
+  inserter:
+    build:
+      context: ./databaseapp
+    container_name: inserter
+    depends_on:
+      - mongo
+    volumes:
+      - ./databaseapp/DATA.json:/data/DATA.json
+      - ./databaseapp/DATA2.json:/data/DATA2.json
+    command: ["node", "mongoSetter.js"]
+
+  scrapper:
+    build:
+      context: ./scrapperapp
+    container_name: scrapper
+    depends_on:
+      - mongo
+    command: ["node", "scrapper.js"]
+
+  filter:
+    build:
+      context: ./filterapp
+    container_name: filter
+    depends_on:
+      - mongo
+      - inserter
+    volumes:
+      - pig_data:/csv
+    command: ["node", "filter.js"]
+
+  parser:
+    build: ./parserapp
+    container_name: parser
+    depends_on:
+      - filter
+    volumes:
+      - pig_data:/csv
+    command: ["node", "jsonToCsv.js"]
+
+  pig:
+    build:
+      context: ./pigapp
+    container_name: pig
+    depends_on:
+      - parser
+    volumes:
+      - ./pigapp:/scripts
+      - pig_data:/scripts/csv
+      - pig_output:/scripts/output
+    working_dir: /scripts
+
+  uploader:
+    build: ./uploaderapp
+    container_name: uploader
+    depends_on:
+      - mongo
+      - kibana
+    volumes:
+      - pig_output:/csv/output
+    command: ["node", "uploader.js"]
+    networks:
+      - elk
+  
+  cache:
+    build:
+      context: ./cacheapp
+    container_name: cache
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+      - mongo
+      - filter
+    command: ["node", "cache.js"]  
+
+volumes:
+  mongo_data:
+  es_data:
+  pig_data:
+  pig_output:
+
+networks:
+  elk:

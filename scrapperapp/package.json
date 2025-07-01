@@ -1,0 +1,9 @@
+{
+  "name": "scrapperapp",
+  "version": "1.0.0",
+  "main": "scrapper.js",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "mongodb": "^6.5.0"
+  }
+}

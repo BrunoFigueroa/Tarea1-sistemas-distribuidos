@@ -1,0 +1,9 @@
+{
+  "name": "uploader",
+  "version": "1.0.0",
+  "main": "uploader.js",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "csv-parse": "^5.5.0"
+  }
+}

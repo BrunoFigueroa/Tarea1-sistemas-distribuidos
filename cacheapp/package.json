@@ -1,0 +1,10 @@
+{
+  "name": "cacheapp",
+  "version": "1.0.0",
+  "main": "cache.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.5.0",
+    "redis": "^4.6.7"
+  }
+}
